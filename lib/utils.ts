@@ -51,7 +51,7 @@ export const calculateTrendPercentage = (
       : { trend: "increment", percentage: 100 };
   }
 
-  const change = countOfThisMonth - countOfLastMonth;
+  const change = countOfLastMonth - countOfThisMonth;
   const percentage = Math.abs((change / countOfLastMonth) * 100);
 
   if (change > 0) {
