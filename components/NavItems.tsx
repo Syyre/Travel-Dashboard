@@ -3,7 +3,7 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 import { sidebarItems } from "~/constants";
 
-const NavItems = () => {
+const NavItems = ({ handleClick }: { handleClick?: () => void }) => {
   const user = {
     name: "John Doe",
     email: "ranodom@gmail.com",
@@ -27,9 +27,10 @@ const NavItems = () => {
             <NavLink to={item.href} key={item.id}>
               {({ isActive }: { isActive: boolean }) => (
                 <div
-                  className={cn("group nav-item", {
+                  className={cn("group nav-item w-full", {
                     "bg-primary-100 !text-white": isActive,
                   })}
+                  onClick={handleClick}
                 >
                   <img
                     src={item.icon}
